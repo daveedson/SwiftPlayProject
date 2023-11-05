@@ -71,7 +71,7 @@ struct ContentView: View {
         .padding(20)
         .offset(y:80)
         }
-        .frame(maxWidth: 400)
+        .frame(maxWidth: 380)
         .padding(20)
         .dynamicTypeSize(.xSmall ... .xxLarge)
        
