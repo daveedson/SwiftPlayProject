@@ -49,6 +49,7 @@ struct ContentView: View {
                 HStack {
                     HStack {
                         Image(systemName: "ellipsis")
+                             
                         Divider()
                         Image(systemName: "sparkle.magnifyingglass")
                         Divider()
@@ -56,18 +57,21 @@ struct ContentView: View {
                     }
                     .padding()
                    .frame(height: 44)
+                   .overlay(RoundedRectangle(cornerRadius: 20).stroke(linearGradient,style:StrokeStyle(lineWidth:2,lineCap:.round,lineJoin:.round)))
                    .offset(x:-20,y:20)
                     Spacer()
                     Image(systemName: "square.and.arrow.down")
                         .padding()
                        .frame(height: 44)
-                       .offset(x:-20,y:20)
+                       .overlay(RoundedRectangle(cornerRadius: 20).stroke(linearGradient,style:StrokeStyle(lineWidth:2,lineCap:.round,lineJoin:.round)))
+                       .offset(x:20,y:20)
                        
                 }
             }
             .padding(20)
-            .background(.ultraThinMaterial)
-            .cornerRadius(30)
+            .background(.regularMaterial)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(linearGradient,style:StrokeStyle(lineWidth:2,lineCap:.round,lineJoin:.round)))
+            .cornerRadius(20)
         .padding(20)
         .offset(y:80)
         }
@@ -76,6 +80,12 @@ struct ContentView: View {
         .dynamicTypeSize(.xSmall ... .xxLarge)
        
     }
+    
+}
+
+
+var linearGradient: LinearGradient{
+    LinearGradient(colors: [.clear,.primary.opacity(0.3),.clear], startPoint: .topLeading, endPoint: .bottomTrailing)
 }
 
 struct ContentView_Previews: PreviewProvider {
